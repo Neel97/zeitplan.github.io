@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/home-style.css">
+</head>
+<body class="grey lighten-3">
+	<header class="navbar-fixed">
+		<nav class="blue lighten-2" role="navigation">
+			<div class="nav-wrapper">
+				<a href="#" class="nav brand-logo">Zeitplan</a>
+				<ul class="right hide-on-med-and-down" id="head-links">
+					<li><a href=""><i class="material-icons">live_help</i></a></li>
+					<li><a href=""><i class="material-icons">notifications</i></a></li>
+					<li><a href="index.html"><i class="material-icons">power_settings_new</i></a></li>
+				</ul>
+
+				<ul class="side-nav" id="mobile-nav">
+					<li><a href=""><i class="material-icons">live_help</i> FAQ</a></li>
+					<li><a href=""><i class="material-icons">notifications</i> Notifications</a></li>
+					<li><a href="index.html"><i class="material-icons">power_settings_new</i> Logout</a></li>
+					<!-- <li><a href=""><i class="material-icons">library_add</i> New Institue</a></li> -->
+				</ul>
+				<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+			</div>
+		</nav>
+	</header>
+
+	<div class="row" id="body">
+		<div class="col m5 white z-depth-1">
+			<div class="row">
+				<div class="col s12">
+					<ul class="tabs">
+						<li class="tab col s4 custom-tab"><a href="#new-institute">Institute</a></li>
+						<li class="tab col s4 custom-tab"><a href="#add-guide">Add Guide</a></li>
+						<li class="tab col s4 custom-tab"><a href="#time-table">Time-Table</a></li>
+					</ul>
+				</div>
+				<div id='new-institute' class="col s12">
+					<form>
+						<div class="input-field center">
+							<img src="assets/images/parallax1.jpg" class="responsive-img circle" id="new-institute-profile" />
+							<a class="btn-floating waves-effects waves-light blue lighten-2" id="upload-profile"><i class="fa fa-camera"></i></a>
+						</div>
+						<div class="input-field col s12">
+							<input type="text" name="instName" placeholder="Enter Institute name:" />
+						</div>
+						<div class="input-field  col s12">
+							<textarea name="instDesc" class="materialize-textarea" placeholder="Institue Description"></textarea>
+						</div>
+						<div class="input-field col s12">
+							<select name="instType">
+								<option disabled="disabled" selected>Institute Type:</option>
+								<option value="commerce">Commerce</option>
+								<option value="science">Science</option>
+								<option value="arts">Arts</option>
+								<option value="comSci">Commerce & Science</option>
+								<option value="comSciArts">Commerce & Science & Arts</option>
+								<option value="enginn">Engineering</option>
+								<option value="med">Medical</option>
+								<option value="other">Other</option>
+							</select>
+						</div>
+						<div class="input-field col s12">
+							<input type="number" name="workingDays" placeholder="College working in a week(as per student)" />
+						</div>
+
+						<div class="input-field col s12 center">
+							<a class="btn waves-effects waves-light"><i class="material-icons left">business</i> Add Institute</a>
+						</div>
+					</form>
+				</div>
+				<div id='add-guide' class="col s12">
+					<form name="add-guide">
+						<div class="input-field col s12">
+							<input type="text" name="addGuideInstName" id="autocomplete-input"class="autocomplete" placeholder="Institute name" />
+						</div>
+						<div class="add-guide-form" id="add-guide1">
+							<div class="input-field col s12">
+								<input type="text" name="guideName[]" placeholder="Guide name" />
+							</div>
+							<div class="input-field col s12">
+								<input type="text" name="guideDesig[]" placeholder="Guide Designation" />
+							</div>
+							<div class="input-field col s12">
+								<input type="number" name="guideLecsPerDay[]" placeholder="Guide Lectures per day" />
+							</div>
+							<div class="input-field col s12">
+								<input type="number" name="guideMaxCourse[]" placeholder="Maximum no. of courses assigned to guide" />
+							</div>
+						</div>
+					</form>
+					<div class="input-field col s12 center">
+						<a class="btn-floating waves-effect waves-light tooltipped" data-position="right" data-tooltip="Add one more" id="add-one-more-guide"><i class="material-icons">add</i></a>
+					</div>
+					<div class="input-field col s12 center">
+						<a class="btn waves-effect waves-light" id="add-guide"><i class="material-icons left">perm_identity</i> Add Guide</a>
+					</div>
+				</div>
+				<div id='time-table' class="col s12 grey lighten-4">
+					<div class="row card">
+						<div class="input-field col s12">
+							<input type="text" name="TTInstName" id="autocomplete-input"class="autocomplete" placeholder="Institute name" />
+						</div>
+						<div class="input-field col s12">
+							<input type="text" name="tt-class" placeholder="Time-Table for class: ">
+						</div>
+						<div class="input-field col s12">
+							<input type="number" name="LecsPerDay" placeholder="Lectures per day: ">
+						</div>
+					</div>
+					<div class="row card course" id="course1">
+						<div class="input-field col s12">
+							<input type="text" name="crsName[]" placeholder="Course Name:">
+						</div>
+						<div class="input-field col s12">
+							<input type="number" name="crsHrs[]" placeholder="Total Course Hours:">
+						</div>
+						<div class="course-guide" id="course-guide1">
+							<div class="input-field col s12">
+								<input type="text" name="crsGuide[]" id="autocomplete-input" class="autocomplete-crs-guide" placeholder="Course Guide name:">
+							</div>
+							<div class="input-field col s12">
+								<input type="text" name="crsGuideHrs[]" placeholder="Course Guide Hours:">
+							</div>
+						</div>
+						<div class="row col s12 center">
+							<a class="btn btn-floating tooltipped" data-position="right" data-delay="100" data-tooltip="Add new Guide to course" id="add-new-course-guide" onclick="addNewCourseGuide($(this))"><i class="material-icons">add</i></a>
+						</div>
+					</div>
+					<div class="row col s12 center">
+						<a class="btn" id="add-new-course"><i class="material-icons left">add</i> New Course</a>
+					</div>
+					<div class="row col s12 center">
+						<a class="btn" id="proceed-tt"><i class="fa fa-plane left"></i>Submit</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col m7">
+			<div class="input-field z-depth-1" id="searchBox">
+				<i class="fa fa-search" id="search-label"></i>
+				<input id="search" type="search" required >
+			</div>
+			<ul class="collapsible popout" data-collapsible="expandable">
+				<li class="institute">
+					<div class="collapsible-header">
+						<img src="assets/images/parallax1.jpg" class="responsive-img circle institute-profile" />
+						<span class="institute-name">Shree Bhagubhai Mafatlal Polytechnic</span>
+						<a class="institute-info dont-collapse"><i class="material-icons right">info_outline</i></a>
+					</div>
+					<div class="collapsible-body row white">
+						<div class="col s6">
+							<h5 class="center">Time-Table</h5>
+							<ul id="tt-list" class="collection z-depth-1">
+								<li class="collection-item">
+									<div>
+										SE-5
+										<a class="secondary-content">
+											<i class="material-icons right">delete</i>
+											<i class="material-icons right">visibility</i>
+										</a>
+									</div>
+								</li>
+								<li class="collection-item">
+									<div>
+										SE-5
+										<a class="secondary-content">
+											<i class="material-icons right">delete</i>
+											<i class="material-icons right">visibility</i>
+										</a>
+									</div>
+								</li>
+								<li class="collection-item">
+									<div>
+										SE-5
+										<a class="secondary-content">
+											<i class="material-icons right" id="del-tt" onclick="delTT($(this))">delete</i>
+											<i class="material-icons right">visibility</i>
+										</a>
+									</div>
+								</li>
+
+							</ul>
+						</div>
+						<div class="col s6 center">
+							<div id="guide-tt-stats" class="row">
+								<h5>Total Guides registered:</h5>
+								<h2 id="guide-num" class="count">56</h2>
+								<!-- </div>
+								<div id="tt-stats" class="row"> -->
+									<h5>Total Time-Table:</h5>
+									<h2 id="tt-num" class="count">56</h2>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+		<script src="assets/js/jquery-3.1.1.min.js"></script>
+		<script src="assets/js/materialize.min.js"></script>
+		<script>
+			function addNewCourseGuide(thisElem){
+				var ogCG = thisElem.parent().prev().clone();
+
+				ogCG.attr('id', 'course-guide' + (parseInt(ogCG.attr('id').slice(-1))+1));
+						// console.log(ogCG.find('input'));
+						ogCG.find('input').each(function(){
+							$(this).val('');
+						});
+
+						ogCG.insertBefore(thisElem.parent());
+					};
+
+					function delTT(thisElem){
+						// console.log(thisElem.closest('li'));
+						thisElem.closest('li').remove();
+					}
+					
+					$(document).ready(function(){
+						$('.button-collapse').sideNav();
+						$('select').material_select();
+						$('input.autocomplete').autocomplete({
+							data: {
+								'Sakec': null,
+								'Sbmp': null,
+							},
+							limit: 5,
+							minLength: 1
+						});
+						$('ul.tabs').tabs();
+						$('input.autocomplete-crs-guide').autocomplete({
+							data: {
+								'ABC': null,
+								'Xyz': null,
+							},
+							limit: 5,
+							minLength: 1
+						});
+						$('.collapsible').collapsible({
+							onOpen: function(curElem){
+								curElem.find('.count').each(function(){
+									$(this).prop('Counter', 0).animate({
+										Counter: $(this).text()
+									},{
+										duration: 5000,
+										ease: 'linear',
+										step: function(now){
+											$(this).text(Math.ceil(now));
+										}
+									});
+								});
+							}
+						});
+
+						$('.institute-info').unbind('click');
+
+						$('.institute-info').on('click.collapse', function(e){
+							// $(this).closest('.collapsible').collapsible('close', 0);
+						});
+
+						$('#add-one-more-guide').click(function(){
+							var ogElem = $('.add-guide-form:last').clone();
+							ogElem.attr('id', 'add-guide' + (parseInt($('.add-guide-form:last').attr('id').slice(-1))+1));
+							ogElem.find('input').each(function(){
+								$(this).val('');
+							});
+							ogElem.insertAfter('.add-guide-form:last');
+						});
+
+						$('#add-new-course').click(function(){
+							var ogElem = $('.course:first').clone();
+							ogElem.attr('id', 'course' + (parseInt($('.course:last').attr('id').slice(-1))+1));
+							ogElem.find('input').each(function(){
+								$(this).val('');
+							});
+							var ogCG = ogElem.children('.course-guide:first');
+							ogElem.children('.course-guide').remove();
+							ogCG.insertBefore(ogElem.find('#add-new-course-guide').parent());
+							ogElem.insertAfter('.course:last');
+						});
+
+
+					});
+				</script>
+			</body>
+			</html>

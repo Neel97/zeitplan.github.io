@@ -1,0 +1,95 @@
+#questBtn{
+	position: absolute;
+	bottom: -20px;
+	right: 30px;
+}
+
+.brand-logo{
+	left: 40px;
+}
+
+#head-links{
+	margin-right: 20px;
+}
+
+.custom-tab{
+	color: #90caf9 !important;
+}
+
+.tabs .indicator{
+	background-color: #90caf9;
+}
+
+#body{
+	height: 100vh;
+}
+
+#new-institute-profile{
+	width: 180px;
+	height: 180px;
+	border: 3px solid #bdbdbd;
+}
+
+#upload-profile{
+	position: absolute;
+	bottom: 0.7em;
+	left: 19.8em;
+}
+
+#search-label{
+	position: absolute;
+	right: 10px !important;
+	top: 4px;
+	font-weight: 100;
+	font-size: 20px;
+	color: #757575;
+	width: 50px;
+	height: 40px;
+	text-align: center;
+	padding: 9px;
+}
+
+#searchBox input{
+	margin-top: 2px;
+	border: none;
+	padding-left: 10px;
+}
+
+#searchBox{
+	position: relative;
+	width: 100%;
+	height: 3.5em;
+	border: 1px solid #42a5f5;
+	border-radius: 3px;
+	background-color: #fff;
+}
+
+.institute-name{font-size: 2rem;position: relative;top: -1em;left: 6px;text-align: justify;}
+
+.institute-info{
+	
+position: absolute;
+	
+right: -0.5em;
+	
+top: -5px;
+}
+
+.institute{
+	position: relative;
+}
+
+.institute-profile{
+	
+width: 75px !important;
+	
+height: 75px !important;
+	
+margin-top: 10px;
+	
+border: 2px solid #bdbdbd;
+}
+
+.btn, .btn-floating{
+	background: #42a5f5;
+}

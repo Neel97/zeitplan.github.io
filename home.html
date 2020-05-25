@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/home-style.css">
+</head>
+<body class="grey lighten-3">
+	<header class="navbar-fixed">
+		<nav class="blue lighten-2" role="navigation">
+			<div class="nav-wrapper center">
+				<a href="#" class="nav brand-logo">Zeitplan</a>
+				<ul class="right hide-on-med-and-down" id="head-links">
+					<li><a href=""><i class="material-icons">live_help</i></a></li>
+					<li><a href=""><i class="material-icons">notifications</i></a></li>
+					<li><a href="./index.html"><i class="material-icons">power_settings_new</i></a></li>
+				</ul>
+
+				<ul class="side-nav" id="mobile-nav">
+					<li><a href=""><i class="material-icons">live_help</i> FAQ</a></li>
+					<li><a href=""><i class="material-icons">notifications</i> Notifications</a></li>
+					<li><a href="./index.html"><i class="material-icons">power_settings_new</i> Logout</a></li>
+				</ul>
+				<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+			</div>
+		</nav>
+	</header>
+
+	<div class="row" id="body">
+		<div class="col m5 white z-depth-1" style="position: relative; left: 0; min-height: 100%">
+			<div class="row">
+				<div class="col s12">
+					<ul class="tabs">
+						<li class="tab col s4 custom-tab"><a href="#new-institute">Institute</a></li>
+						<li class="tab col s4 custom-tab"><a href="#add-guide">Add Guide</a></li>
+						<li class="tab col s4 custom-tab"><a href="#time-table">Time-Table</a></li>
+					</ul>
+				</div>
+				<div id='new-institute' class="col s12">
+					<div class="row card">
+						<form name="add-new-institute">
+							
+							<div class="input-field col s12">
+								<input type="text" name="instName" placeholder="Enter Institute name:" />
+							</div>
+							<div class="input-field  col s12">
+								<textarea name="instDesc" class="materialize-textarea" placeholder="Institue Description"></textarea>
+							</div>
+							<div class="input-field col s12">
+								<select name="instType">
+									<option disabled="disabled" selected>Institute Type:</option>
+									<option value="commerce">Commerce</option>
+									<option value="science">Science</option>
+									<option value="arts">Arts</option>
+									<option value="comSci">Commerce & Science</option>
+									<option value="comSciArts">Commerce & Science & Arts</option>
+									<option value="enginn">Engineering</option>
+									<option value="med">Medical</option>
+									<option value="other">Other</option>
+								</select>
+							</div>
+							<div class="input-field col s12">
+								<input type="number" name="workingDays" placeholder="College working in a week(as per student)" />
+							</div>
+							
+							<div class="input-field col s12 center" style="margin-bottom: 0.5rem;">
+								<a class="btn waves-effects waves-light" id="add-inst-btn"><i class="material-icons left">business</i> Add Institute</a><br />
+							</div><br />
+						</form>
+					</div>
+				</div>
+				<div id='add-guide' class="col s12">
+					<form name="add-guide">
+						<div class="row card">
+							<div class="input-field col s12">
+								<select name="inst-name-list">
+									<option disabled="disabled" selected>Select Institute:</option>
+								</select>
+							</div>
+						</div>
+						<div class="row card">
+							<div class="add-guide-form" id="add-guide1">
+								<div class="input-field col s12">
+									<input type="text" name="guideName[]" placeholder="Guide name" />
+								</div>
+								<div class="input-field col s12">
+									<input type="text" name="guideDesig[]" placeholder="Guide Designation" />
+								</div>
+								<div class="input-field col s12">
+									<input type="number" name="guideLecsPerDay[]" placeholder="Guide Lectures per day" />
+								</div>
+								<div class="input-field col s12">
+									<input type="number" name="guideMaxCourse[]" placeholder="Maximum no. of courses assigned to guide" />
+								</div>
+							</div>
+						</div>
+					</form>
+					<div class="input-field col s12 center">
+						<a class="btn-floating waves-effect waves-light tooltipped" data-position="right" data-tooltip="Add one more" id="add-one-more-guide"><i class="material-icons">add</i></a>
+					</div>
+					<div class="input-field col s12 center">
+						<a class="btn waves-effect waves-light" id="add-new-guide"><i class="material-icons left">perm_identity</i> Add Guide</a>
+					</div>
+				</div>
+				<div id='time-table' class="col s12 grey lighten-4">
+					<div class="row card">
+						<div class="input-field col s12">
+							<input type="text" name="TTInstName" id="autocomplete-input"class="autocomplete" placeholder="Institute name" />
+						</div>
+						<div class="input-field col s12">
+							<input type="text" name="tt-class" placeholder="Time-Table for class: ">
+						</div>
+						<div class="input-field col s12">
+							<input type="number" name="LecsPerDay" placeholder="Lectures per day: ">
+						</div>
+					</div>
+					<div class="row card course" id="course1">
+						<div class="input-field col s12">
+							<input type="text" name="crsName[]" placeholder="Course Name:">
+						</div>
+						<div class="input-field col s12">
+							<input type="number" name="crsHrs[]" placeholder="Total Course Hours:">
+						</div>
+						<div class="course-guide" id="course-guide1">
+							<div class="input-field col s12">
+								<input type="text" name="crsGuide[]" id="autocomplete-input" class="autocomplete-crs-guide" placeholder="Course Guide name:">
+							</div>
+							<div class="input-field col s12">
+								<input type="text" name="crsGuideHrs[]" placeholder="Course Guide Hours:">
+							</div>
+						</div>
+						<div class="row col s12 center">
+							<a class="btn btn-floating tooltipped" data-position="right" data-delay="100" data-tooltip="Add new Guide to course" id="add-new-course-guide" onclick="addNewCourseGuide($(this))"><i class="material-icons">add</i></a>
+						</div>
+					</div>
+					<div class="row col s12 center">
+						<a class="btn" id="add-new-course"><i class="material-icons left">add</i> New Course</a>
+					</div>
+					<div class="row col s12 center">
+						<a class="btn" id="proceed-tt"><i class="fa fa-plane left"></i>Submit</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col m7">
+			<div class="input-field z-depth-1" id="searchBox">
+				<i class="fa fa-search" id="search-label"></i>
+				<input id="search" type="search" required >
+			</div>
+			<ul class="collapsible popout" data-collapsible="expandable" id=inst-list>
+				<li class="institute" id="originalItem">
+					<div class="collapsible-header">
+						<div class="profile">
+							<div class="no-profile center"></div>
+							<img src="" class="responsive-img circle institute-profile" style="display: none" />
+						</div>
+						<div class="institute-name"></div>
+						<a class="institute-info dont-collapse"><i class="material-icons right">info_outline</i></a>
+					</div>
+					<div class="collapsible-body row white">
+						<div class="col s6">
+							<h5 class="center">Time-Table</h5>
+							<ul id="tt-list" class="collection z-depth-1">
+								<li class="collection-item" id="originalItem">
+									<span class="tt-name"></span>
+									<a class="secondary-content">
+										<i class="material-icons right" id="del-tt" onclick="delTT($(this))">delete</i>
+										<i class="material-icons right">visibility</i>
+									</a>
+								</li>
+
+							</ul>
+						</div>
+						<div class="col s6 center">
+							<div id="guide-tt-stats" class="row">
+								<h5>Total Guides registered:</h5>
+								<h2 class="guide-num count"></h2>
+								<h5>Total Time-Table:</h5>
+								<h2 class="tt-num count"></h2>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+	<script src="assets/js/jquery-3.1.1.min.js"></script>
+	<script src="assets/js/materialize.min.js"></script>
+	<script>
+		var instDemoData = {
+			"data": [
+				{
+					"inst_id":"01",
+					"inst_pic": "",
+					"inst_name": "Sakec",
+					"guide_num": "2",
+				},
+				{
+					"inst_id":"02",
+					"inst_pic": "",
+					"inst_name": "SBMP",
+					"guide_num": "4",
+				}
+			],
+			"instList": [
+				["01", "Sakec"],
+				["02", "SBMP"]
+			]
+		};
+		var demoInstCount = 2;
+
+		function addNewCourseGuide(thisElem){
+			var ogCG = thisElem.parent().prev().clone();
+
+			ogCG.attr('id', 'course-guide' + (parseInt(ogCG.attr('id').slice(-1))+1));
+			ogCG.find('input').each(function(){
+				$(this).val('');
+			});
+
+			ogCG.insertBefore(thisElem.parent());
+		};
+
+		function delTT(thisElem){
+			thisElem.closest('li').remove();
+		}
+
+		function setInstNameList(demoInst = []){
+			$.ajax({
+				url: 'php/RequestHandler.php?requestFor=getInstituteNames',
+				dataType: 'json',
+				success: function(res){
+					if(res['status'] != 200){
+						console.log("Error for getInstituteNames.");
+						console.log(res);
+					}
+					else{
+						$.each(res['data'], function(value){
+							var opt = $('select[name="inst-name-list"] option').first().clone();
+							opt.removeAttr('disabled');
+							opt.removeAttr('selected');
+							opt.attr('value', res['data'][value][0]);
+							opt.text(res['data'][value][1]);
+							$('select[name="inst-name-list"]').append(opt);
+							$('select[name="inst-name-list"]').material_select();
+						});
+					}
+				},
+				complete: function(){
+					res = [];
+					res['data'] = instDemoData['instList'];
+
+					if(demoInst.length > 0) res['data'] = demoInst;
+					$.each(res['data'], function(value){
+						var opt = $('select[name="inst-name-list"] option').first().clone();
+						opt.removeAttr('disabled');
+						opt.removeAttr('selected');
+						opt.attr('value', res['data'][value][0]);
+						opt.text(res['data'][value][1]);
+						$('select[name="inst-name-list"]').append(opt);
+						$('select[name="inst-name-list"]').material_select();
+					});
+				}
+			});
+		}
+
+		$(document).ready(function(){
+			$('.button-collapse').sideNav();
+			$('select').material_select();
+			$('ul.tabs').tabs();
+			$('input.autocomplete-crs-guide').autocomplete({
+				data: {
+					'ABC': null,
+					'Xyz': null,
+				},
+				limit: 5,
+				minLength: 1
+			});
+
+			$('.collapsible').collapsible({
+				onOpen: function(curElem){
+					console.log($(this).text());
+					curElem.find('.count').each(function(){
+						$(this).prop('Counter', 0).animate({
+							Counter: $(this).text()
+						},{
+							duration: 5000,
+							ease: 'linear',
+							step: function(now){
+								$(this).text(Math.ceil(now));
+							}
+						});
+					});
+				}
+			});
+
+			setInstNameList();
+
+			$('#add-one-more-guide').click(function(){
+				var ogElem = $('.add-guide-form:last').clone();
+				ogElem.attr('id', 'add-guide' + (parseInt($('.add-guide-form:last').attr('id').slice(-1))+1));
+				ogElem.find('input').each(function(){
+					$(this).val('');
+				});
+				ogElem.insertAfter('.add-guide-form:last');
+			});
+
+			$('#add-new-course').click(function(){
+				var ogElem = $('.course:first').clone();
+				ogElem.attr('id', 'course' + (parseInt($('.course:last').attr('id').slice(-1))+1));
+				ogElem.find('input').each(function(){
+					$(this).val('');
+				});
+				var ogCG = ogElem.children('.course-guide:first');
+				ogElem.children('.course-guide').remove();
+				ogCG.insertBefore(ogElem.find('#add-new-course-guide').parent());
+				ogElem.insertAfter('.course:last');
+			});
+
+			$('#add-inst-btn').click(function(){
+				var formData = new FormData(document.querySelector('form[name="add-new-institute"]'));
+					jQuery.ajax({
+						url: 'php/RequestHandler.php?requestFor=newInst',
+						dataType: 'json',
+						data:  formData,
+						type: 'POST',
+						processData: false,
+						contentType: false,
+						cache: false,
+						success: function(res){
+							if(res['status'] == 200){
+								console.log('new institute sucesfully inserted. status: 200');
+								var newInst= $('.institute').first().clone();
+								newInst.attr('id', $('input[name="instName"]').val());
+								newInst.find('.institute-name').text($('input[name="instName"]').val());
+								newInst.find('.guide-num').text(0);
+								$("#inst-list").append(newInst);
+							}
+							else
+								console.log(res['err']);
+						},
+						complete: function(){
+							var newInst= $('.institute').first().clone();
+							// newInst.attr('id', $('input[name="instName"]').val());
+							newInst.find('.institute-name').text($('input[name="instName"]').val());
+							newInst.find('.guide-num').text(0);
+							newInst.find('.no-profile').text($('input[name="instName"]').val().charAt(0).toUpperCase());
+							$("#inst-list").append(newInst);
+							demoInstCount++;
+							newInst.attr('id', demoInstCount);
+							instDemoData['data'].push({
+								"inst_id": demoInstCount,
+								"inst_pic": "",
+								"inst_name": $('input[name="instName"]').val(),
+								"guide_num": "0"
+							});
+							instDemoData['instList'].push([demoInstCount, $('input[name="instName"]').val()]);
+							setInstNameList([[demoInstCount, $('input[name="instName"]').val()]]);
+						}
+					});
+				});
+
+			$.ajax({
+				url: 'php/RequestHandler.php?requestFor=getCompleteInstituteData',
+				dataType: 'json',
+				success: function(res){
+					if(res['status'] != 200)
+						console.log("getCompleteInstituteData ERR: " + res['err']);
+					else{
+						console.log(res['data']);
+						$.each(res['data'],function(index,value){
+							var newInst= $('.institute').first().clone();
+							newInst.attr('id', value['inst_id']);
+							if(value['inst_pic'].length > 0){
+								newInst.find('.institute-profile').attr('src', './php/uploads/' + value['inst_pic']);
+								newInst.find('.no-profile').hide();
+								newInst.find('.institute-profile').show();
+							}else{
+								newInst.find('.no-profile').text(value['inst_name'].charAt(0).toUpperCase());
+							}
+							newInst.find('.institute-name').text(value['inst_name']);
+							newInst.find('.guide-num').text(value['guide_num']);
+							$("#inst-list").append(newInst);
+						});
+					}
+				},
+				complete: function(){
+					var res = {
+						"data": instDemoData['data']
+					};
+
+					$.each(res['data'],function(index,value){
+						var newInst= $('.institute').first().clone();
+						newInst.attr('id', value['inst_id']);
+						newInst.find('.no-profile').text(value['inst_name'].charAt(0).toUpperCase());
+						newInst.find('.institute-name').text(value['inst_name']);
+						newInst.find('.guide-num').text(value['guide_num']);
+						$("#inst-list").append(newInst);
+					});
+				}
+			});
+
+			$('#add-new-guide').click(function(){
+				$.ajax({
+					url: 'php/RequestHandler.php?requestFor=addGuide',
+					dataType: 'json',
+					type: 'POST',
+					data: new FormData(document.querySelector('form[name="add-guide"]')),
+					processData: false,
+					contentType: false,
+					success: function(res){
+						if(res['status'] != 200){
+							console.log("Error in: addGuide");
+							console.log(res);
+						}
+						else{
+							var ogElem = $('.add-guide-form:last').clone();
+							ogElem.attr('id', 'add-guide' + (parseInt($('.add-guide-form:last').attr('id').slice(-1))+1));
+							ogElem.find('input').each(function(){
+								$(this).val('');
+							});
+							$('.add-guide-form').remove();
+							$('form[name=add-guide]').append(ogElem);						}
+					},
+					complete: function(){
+						var ogElem = $('.add-guide-form:last').clone();
+						ogElem.attr('id', 'add-guide' + (parseInt($('.add-guide-form:last').attr('id').slice(-1))+1));
+						ogElem.find('input').each(function(){
+							$(this).val('');
+						});
+						$('.add-guide-form').remove();
+						$('form[name=add-guide]').append(ogElem);
+
+						var instId = $('select[name="inst-name-list"]').val();
+						var oldCount =  $(`#${instId} .guide-num`).text();
+						console.log(instId);
+						$(`#${instId} .guide-num`).text(parseInt(oldCount) + 1);
+					}
+				});
+			});
+
+			$('#search').on("keyup", function(){
+				var queryText = $(this).val().toLowerCase();
+				$.each($('.institute-name'), function(){
+					var curText = $(this).text();
+					if(queryText.length == 0){
+						$(this).css('style');
+						if($(this).closest('.institute').attr('id') != "originalItem"){
+							$(this).closest('.institute').show();
+						}
+					}
+
+					if(curText.toLowerCase().search(queryText) != -1){
+						if($(this).closest('.institute').attr('id') != "originalItem"){
+							$(this).closest('.institute').show();
+						}
+
+						var objRegExp = new RegExp(queryText, "gi");
+						var searchIndex = objRegExp.exec(curText).index;
+						var newHTMLText = curText.substr(0, searchIndex) + '<b style="font-weight:500">'  + curText.substr(searchIndex, queryText.length) + '</b>' + curText.substr(searchIndex + queryText.length);
+							// console.log(newHTMLText);
+							$(this).html(newHTMLText);
+						}
+						else{
+							$(this).removeAttr('style');
+							$(this).closest('.institute').hide();
+						}
+					});
+
+			});
+
+			$('input[name="profile-attachment"]').on("change", function(){
+				var preview = document.querySelector('#new-institute-profile');
+				var file = document.querySelector('input[name="profile-attachment"]').files[0];
+				var reader = new FileReader();
+
+				reader.onloadend = function(){
+					preview.src = reader.result;
+				}
+
+				if(file)
+					reader.readAsDataURL(file);
+				else
+					preview.src="";
+			});
+
+			$('#upload-profile').click(function(){
+				$('input[name="profile-attachment"]').click();
+			});
+		});
+	</script>
+</body>
+</html>

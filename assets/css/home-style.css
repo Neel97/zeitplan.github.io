@@ -1,0 +1,124 @@
+#questBtn{
+	position: absolute;
+	bottom: -20px;
+	right: 30px;
+}
+
+.brand-logo{position: relative !important;}
+
+#head-links{
+	margin-right: 20px;
+}
+
+.custom-tab{
+	color: #90caf9 !important;
+}
+
+.tabs .indicator{
+	background-color: #90caf9;
+}
+
+#body{
+	height: 100vh;
+	margin-bottom: 0px !important;
+}
+
+#new-institute, #add-guide, #time-table{
+	height: 100%;
+}
+
+#new-institute-profile{
+	width: 180px;
+	height: 180px;
+	border: 3px solid #bdbdbd;
+}
+
+#upload-profile{
+	position: absolute;
+	bottom: 0.7em;
+	right: 14.5em;
+}
+
+#search-label{
+	position: absolute;
+	right: 10px !important;
+	top: 4px;
+	font-weight: 100;
+	font-size: 20px;
+	color: #757575;
+	width: 50px;
+	height: 40px;
+	text-align: center;
+	padding: 9px;
+}
+
+#searchBox input{
+	margin-top: 2px;
+	border: none;
+	padding-left: 10px;
+}
+
+#searchBox{
+	position: relative;
+	width: 100%;
+	height: 3.5em;
+	border: 1px solid #42a5f5;
+	border-radius: 3px;
+	background-color: #fff;
+}
+
+.institute-name{font-size: 1.2rem;display: inline-block;/* margin: -5px; *//* position: relative; *//* text-align: center; */}
+
+.institute-info{
+	
+	position: absolute;
+	
+	right: -0.5em;
+	
+	top: -5px;
+}
+
+.institute{
+	position: relative;
+}
+
+.profile{
+	display: inline-block;
+	width: 9%;
+}
+
+.institute-profile{
+	position: relative;
+	width: 50px !important;
+	height: 50px !important;
+	border: 2px solid #bdbdbd;
+	/* bottom: 0 !important; */
+	margin: 8px 0px -8px 0px;
+}
+
+.no-profile{
+	/* position: relative; */
+	background: #64b5f6;
+	width: 50px !important;
+	height: 50px !important;
+	border: 2px solid #bdbdbd;
+	text-align: center;
+	border-radius: 50%;
+	color: #fff;
+	font-size: 1.5rem;
+	display: inline-block;
+	margin: 8px 0px 8px 0px;
+	line-height: 47px;
+}
+
+.institute-profile::before{
+	background: red;
+}
+
+.btn, .btn-floating{
+	background: #42a5f5;
+}
+
+#originalItem, #instituteTemplate{
+	display: none;
+}
